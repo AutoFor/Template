@@ -1,0 +1,257 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExcelQueueData作成" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabf="clr-namespace:UiPath.Excel.Activities.Business.Filter;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>933,2694</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ExcelQueueData作成_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ExcelQueueData作成" sap:VirtualizedContainerService.HintSize="704,2629" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="642,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;ExcelGenerateQueuei納品先一覧.xaml is running...&quot;]" />
+    <ueab:SequenceX DisplayName="単一の Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="642,2337" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Config(&quot;点検予実績リストAllPath&quot;).ToString]" DisplayName="ファイルをコピー" sap:VirtualizedContainerService.HintSize="580,154" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Config(&quot;Template点検予実績リストPath&quot;).ToString]" />
+      <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="580,2032" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" TemplatePath="02_Template\Template_点検予実績リスト.xlsx" UseTemplate="True" WorkbookPath="[Config(&quot;点検予実績リストAllPath&quot;).ToString]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="点検予実績リストAllExcel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="546,1740" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="LastRow" />
+                <Variable x:TypeArguments="sd:DataTable" Name="dt_Queue" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ForEachFileX DisplayName="繰り返し (フォルダー内の各ファイル)" Filter="*.xlsx" Folder="[Config(&quot;点検予実績リスト各拠点DataDir&quot;).ToString]" sap:VirtualizedContainerService.HintSize="484,339" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="True">
+                <ui:ForEachFileX.Body>
+                  <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                    <ActivityAction.Argument1>
+                      <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+                    </ActivityAction.Argument1>
+                    <ActivityAction.Argument2>
+                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                    </ActivityAction.Argument2>
+                    <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="530,1494" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="02_Template\Template_点検予実績リスト.xlsx" UseTemplate="True" WorkbookPath="[CurrentFile.FullName]">
+                        <ueab:ExcelApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="点検予実績リストExcel" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="496,1202" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ueab:FilterX FilterArgument="{x:Null}" ClearFilter="True" ColumnName="３ヶ月点検日" DisplayName="フィルター" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="FilterX_1" Range="[点検予実績リストExcel.Sheet(&quot;点検予実績リスト&quot;)]" />
+                              <ueab:FilterX ClearFilter="False" ColumnName="３ヶ月点検日" DisplayName="フィルター" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="FilterX_4" Range="[点検予実績リストExcel.Sheet(&quot;点検予実績リスト&quot;)]">
+                                <ueab:FilterX.FilterArgument>
+                                  <ueabf:FilterArgument Mode="Basic">
+                                    <ueabf:FilterArgument.AdvancedFiltersArgument>
+                                      <ueabf:AdvancedFilterArgument LogicalOperator="And">
+                                        <ueabf:AdvancedFilterArgument.Condition1>
+                                          <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="NONE" />
+                                        </ueabf:AdvancedFilterArgument.Condition1>
+                                        <ueabf:AdvancedFilterArgument.Condition2>
+                                          <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="NONE" />
+                                        </ueabf:AdvancedFilterArgument.Condition2>
+                                      </ueabf:AdvancedFilterArgument>
+                                    </ueabf:FilterArgument.AdvancedFiltersArgument>
+                                    <ueabf:FilterArgument.BasicFiltersArgument>
+                                      <ueabf:BasicFilterArgument>
+                                        <ueabf:BasicFilterArgument.BasicFilters>
+                                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                                            <InArgument x:TypeArguments="x:String">□</InArgument>
+                                          </scg:List>
+                                        </ueabf:BasicFilterArgument.BasicFilters>
+                                      </ueabf:BasicFilterArgument>
+                                    </ueabf:FilterArgument.BasicFiltersArgument>
+                                  </ueabf:FilterArgument>
+                                </ueab:FilterX.FilterArgument>
+                              </ueab:FilterX>
+                              <ueab:AppendRangeX StartingColumnName="{x:Null}" DestinationHasHeaders="False" DestinationRange="[点検予実績リストAllExcel.Sheet(&quot;点検予実績リスト&quot;)]" DisplayName="範囲を追加" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,212" sap2010:WorkflowViewState.IdRef="AppendRangeX_1" PasteOptions="All" SourceRange="[点検予実績リストExcel.Sheet(&quot;点検予実績リスト&quot;)]" Transpose="False" />
+                              <ueab:FilterX ClearFilter="False" ColumnName="６ヶ月点検日" DisplayName="フィルター" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="FilterX_5" Range="[点検予実績リストExcel.Sheet(&quot;点検予実績リスト&quot;)]">
+                                <ueab:FilterX.FilterArgument>
+                                  <ueabf:FilterArgument Mode="Basic">
+                                    <ueabf:FilterArgument.AdvancedFiltersArgument>
+                                      <ueabf:AdvancedFilterArgument LogicalOperator="And">
+                                        <ueabf:AdvancedFilterArgument.Condition1>
+                                          <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="NONE" />
+                                        </ueabf:AdvancedFilterArgument.Condition1>
+                                        <ueabf:AdvancedFilterArgument.Condition2>
+                                          <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="NONE" />
+                                        </ueabf:AdvancedFilterArgument.Condition2>
+                                      </ueabf:AdvancedFilterArgument>
+                                    </ueabf:FilterArgument.AdvancedFiltersArgument>
+                                    <ueabf:FilterArgument.BasicFiltersArgument>
+                                      <ueabf:BasicFilterArgument>
+                                        <ueabf:BasicFilterArgument.BasicFilters>
+                                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                                            <InArgument x:TypeArguments="x:String">□</InArgument>
+                                          </scg:List>
+                                        </ueabf:BasicFilterArgument.BasicFilters>
+                                      </ueabf:BasicFilterArgument>
+                                    </ueabf:FilterArgument.BasicFiltersArgument>
+                                  </ueabf:FilterArgument>
+                                </ueab:FilterX.FilterArgument>
+                              </ueab:FilterX>
+                              <ueab:AppendRangeX StartingColumnName="{x:Null}" DestinationHasHeaders="False" DestinationRange="[点検予実績リストAllExcel.Sheet(&quot;点検予実績リスト&quot;)]" DisplayName="範囲を追加" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,212" sap2010:WorkflowViewState.IdRef="AppendRangeX_2" PasteOptions="All" SourceRange="[点検予実績リストExcel.Sheet(&quot;点検予実績リスト&quot;)]" Transpose="False" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ueab:ExcelApplicationCard.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ueab:ExcelApplicationCard>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachFileX.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ForEachFileX>
+              <ueab:FindFirstLastDataRowX FirstRowIndex="{x:Null}" BlankRowsToSkip="1" ColumnName="拠点" ConfigureLastRowAs="LastPopulatedRow" DisplayName="最初/最後のデータ行を検索" FirstRowOffset="0" HasHeaders="True" sap:VirtualizedContainerService.HintSize="484,308" sap2010:WorkflowViewState.IdRef="FindFirstLastDataRowX_1" LastRowIndex="[LastRow]" LastRowOffset="0" Range="[点検予実績リストAllExcel.Sheet(&quot;点検予実績リスト&quot;)]" VisibleRowsOnly="False" />
+              <ueab:CopyPasteRangeX DestinationRange="[点検予実績リストAllExcel.Sheet(&quot;Queue&quot;).Range(String.Format(&quot;A3:K{0}&quot;,LastRow.ToString))]" DisplayName="範囲をコピー/貼り付け" sap:VirtualizedContainerService.HintSize="484,240" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_3" PasteOptions="All" SourceRange="[点検予実績リストAllExcel.Sheet(&quot;Queue&quot;).Range(&quot;A2:K2&quot;)]" Transpose="False" />
+              <ueab:CopyPasteRangeX DestinationRange="[点検予実績リストAllExcel.Sheet(&quot;Queue&quot;).Range(String.Format(&quot;A2:K{0}&quot;,LastRow.ToString))]" DisplayName="範囲をコピー/貼り付け" sap:VirtualizedContainerService.HintSize="484,240" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_4" PasteOptions="Values" SourceRange="[点検予実績リストAllExcel.Sheet(&quot;Queue&quot;).Range(String.Format(&quot;A2:K{0}&quot;,LastRow.ToString))]" Transpose="False" />
+              <ueab:ReadRangeX DisplayName="範囲を読み込み" sap:VirtualizedContainerService.HintSize="484,169" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[点検予実績リストAllExcel.Sheet(&quot;Queue&quot;)]" SaveTo="[dt_Queue]" />
+              <ui:AppendCsvFile DataTable="[dt_Queue]" Delimitator="Comma" DisplayName="CSV に追加" FilePath="[Config(&quot;CsvQueuePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="484,133" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelApplicationCard>
+    </ueab:SequenceX>
+  </Sequence>
+</Activity>

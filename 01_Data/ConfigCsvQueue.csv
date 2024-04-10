@@ -1,0 +1,20 @@
+﻿Name,Value,Description,IsPlaceholder,IsMandatoryDir
+DataDir,C:\RPA\税制優遇,CsvProcess.xaml内で使用する。 ,true,True
+QueueTemplatePath,"02_Template\CsvQueueTemplate10_建機工へ証明書申請用を送付.csv"
+QueueDir,{{DataDir}}\10_建機工メール送付\00_Queue,,true,true
+QueuePath,{{DataDir}}\10_建機工メール送付\00_Queue\{{yyMMdd}}_Queue.csv,CsvProcess.xaml内で使用する。 
+DequeuePath,,未使用
+ColDate,RPA処理時刻,CsvProcess.xaml内で使用する
+ColResult,RPA処理結果,CsvProcess.xaml内で使用する
+ColDetail,RPA処理結果_詳細,CsvProcess.xaml内で使用する
+ColRetryNo,RPAリトライ回数,CsvProcess.xaml内で使用する
+ColProcessName,処理名,CsvProcess.xaml内で使用する
+StatusNameSuccess,成功,CsvProcess.xaml内で使用する
+StatusNameFailed,失敗,CsvProcess.xaml内で使用する
+StatusNameBusinessException,ビジネス例外,CsvProcess.xaml内で使用する
+StatsuCodeSuccessful,100,成功    
+StatusCodeFailed,900,失敗
+StatusCodeBusinessException,901,ビジネス例外
+MaxRetryNo,3,CsvProcess.xaml内で使用する
+ColFirstIdx,3
+ColMaxIdx,6

@@ -1,0 +1,15 @@
+MailNo,MailTo,MailCc,MailSubject,MailBody
+0,{{UserMailAddress}},{{AdminNotificationMailAddress}},RPA 成功,成功
+20,{{UserMailAddress}},,,
+900,{{AdminNotificationMailAddress}},,[RPAエラー] 税制優遇_{{ProjectName}},"ご担当者様
+
+下記エラーが発生しました。ご確認よろしくお願いいたします。
+
+▼エラー処理名
+{{CsvQueueColProcessName}}
+
+▼エラー発生個所
+{{SystemException.Source}}
+
+▼エラーソース
+{{SystemException.Message}}"

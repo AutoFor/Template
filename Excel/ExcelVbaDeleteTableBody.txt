@@ -1,0 +1,16 @@
+Sub Main(SheetName as String)
+
+
+'TargetListという名前のListObject型の変数を宣言します。ListObjectはExcelテーブルを表します。
+Dim TargetList as ListObject
+
+Set TargetList = ThisWorkbook.Sheets(SheetName).ListObjects(1)
+
+
+
+If Not TargetList.DataBodyRange Is Nothing Then
+	TargetList.DataBodyRange.Delete
+End IF
+
+
+End Sub

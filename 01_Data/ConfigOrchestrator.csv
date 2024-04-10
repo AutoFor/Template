@@ -1,0 +1,13 @@
+Name,Value,Description
+MaxRetryNumber,0,Orchestratorのキューを使用する場合は、0でなければなりません。0 より大きい場合、ロボットはシステム例外で失敗した同じトランザクションを再試行します。整数値でなければならない。
+MaxConsecutiveSystemExceptions,0,連続して許可されるシステム例外の数です。MaxConsecutiveSystemExceptionsに達した場合、ジョブは停止されます。この機能を無効にするには、この値を0に設定します。
+LogMessage_GetTransactionData,Processing Transaction Number: ,ロギングメッセージの静的な部分。トランザクションデータの取得を呼び出します。
+LogMessage_GetTransactionDataError,Error getting transaction data for Transaction Number: ,ロギングメッセージの静的な部分。トランザクションデータの取得にエラーが発生しました。
+LogMessage_Success,Transaction Successful.,ロギングメッセージの静的な部分。処理済み トランザクションに成功しました。
+LogMessage_BusinessRuleException,Business rule exception.,ロギングメッセージの静的な部分。処理されたトランザクションはビジネス例外で失敗しました。
+LogMessage_ApplicationException,System exception.,ロギングメッセージの静的な部分。処理されたトランザクションは、アプリケーションの例外で失敗しました。
+ExceptionMessage_ConsecutiveErrors,The maximum number of consecutive system exceptions was reached. ,MaxConsecutiveSystemExceptions 数に達した場合のエラーメッセージ。
+RetryNumberGetTransactionItem,2,例外が発生した場合に、Get Transaction Itemアクティビティが再試行される回数。整数 >= 1でなければならない。
+RetryNumberSetTransactionStatus,2,例外が発生した場合に、Set transaction status活動を再試行する回数。整数 >= 1でなければならない。
+ShouldMarkJobAsFaulted,FALSE,TRUEまたはFALSEでなければならない。値がTRUEで、Initialization状態でエラーが発生した場合、またはMaxConsecutiveSystemExceptionsに達した場合、ジョブはFaultedとマークされます。
+ExScreenshotsFolderPath,,例外スクリーンショットの保存先 - フルパスまたは相対パスを指定できます。

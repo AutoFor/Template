@@ -1,0 +1,5 @@
+Sub Main()
+
+	ThisWorkbook.RefreshAll
+
+End Sub
